@@ -1,0 +1,116 @@
+%button {
+  text-decoration: none;
+  color: #55c57a;
+  display: inline-block;
+  padding: 3px 3px 4px;
+  border-bottom: 1px solid #55c57a;
+  margin-top: 2rem;
+}
+
+.section1 {
+
+  background-color: #f7f7f7f7;
+  margin-top: -10%;
+  padding-bottom: 30rem;
+
+  h2 {
+    margin: 20rem 0 5rem 0;
+    display: inline-block;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8));
+    transition: all 0.2s;
+  }
+
+  h2:hover {
+    transform: skewY(2deg) skewX(20deg);
+  }
+
+
+    .container_flex > div {
+      width: 50%;
+      padding: 0 2rem;
+
+      h4 {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      p {
+        line-height: 2.5rem;
+      }
+
+
+      .btn_more:visited {
+        @extend %button;
+      }
+
+      .btn_more:link {
+        @extend %button;
+      }
+
+      .btn_more {
+        transition: all 0.2s;
+      }
+
+      .btn_more:hover {
+        background-color: #55c57a;
+        color: white;
+        transform: translateY(2px);
+        box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.5);
+
+      }
+
+      .btn_more:active {
+        transform: translateY(-2px);
+      }
+
+    }
+
+
+    .container_picture {
+      position: relative;
+      top: 20%;
+
+      .image {
+        border-radius: 3px;
+        box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.5);
+        width: 55%;
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        outline-offset: 2rem;
+        transition: all 0.2s;
+
+        &:first-child {
+          left: 0;
+          top: -2rem;
+        }
+
+        &:nth-child(2) {
+          right: 0;
+          top: 2rem;
+        }
+
+        &:last-child {
+          left: 20%;
+          top: 6rem;
+        }
+
+        &:hover {
+          z-index: 20;
+          transform: scale(1.1);
+          outline: 1.5rem solid #55c57a;
+        }
+      }
+
+      &:hover .image:not(:hover) {
+        transform: scale(0.95);
+      }
+    }
+  }

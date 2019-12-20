@@ -1,0 +1,63 @@
+/* Button */
+
+@mixin button {
+  text-decoration: none;
+  color: silver;
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  transition-duration: 0.2s;
+  transition-property: all;
+  animation-name: moveInButton;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+  position: relative;
+
+}
+
+
+.button {
+
+  &:link {
+    @include button;
+  }
+  &:visited {
+    @include button;
+  }
+
+  &-white {
+    background-color: white;
+  }
+  &:after {
+    background-color: white;
+  }
+
+
+
+&::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  border-radius: 25px;
+  transition: all .5s;
+}
+
+
+
+&:hover {
+  transform: translateY(-5px);
+  &::after {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+&:active {
+  transform: translateY(2px);
+}
+}
